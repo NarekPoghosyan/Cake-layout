@@ -1,0 +1,58 @@
+@mixin cakes($w, $h, $d, $jc, $ai, $p, $bi) {
+    width: $w;
+    height: $h;
+    display: $d;
+    justify-content: $jc;
+    align-items: $ai;
+    position: $p;
+    background-image: $bi;
+    background-repeat: no-repeat;
+}
+
+@mixin posTopLeft($p, $t, $l) {
+    position: $p;
+    top: $t;
+    left: $l;
+}
+
+.cakes {
+    @include cakes(98%, 350px, flex, space-around, center, null, null);
+    margin-top: 60px;
+
+    .cake_one {
+        @include cakes(300px, 302px, flex, center, flex-end, relative, url('../../../assets//icons/cake_one.svg'));
+
+        div {
+            @include posTopLeft(absolute, 90%, 31%);
+        }
+
+    }
+
+    .cake_two {
+        @include cakes(300px, 302px, flex, center, flex-end, relative, url('../../../assets//icons/cake_two.svg'));
+
+        div {
+            @include posTopLeft(absolute, 90%, 42%);
+        }
+
+    }
+
+    .cake_three {
+        @include cakes(300px, 302px, flex, center, flex-end, relative, url('../../../assets//icons/cake_three.svg'));
+
+        div {
+            @include posTopLeft(absolute, 90%, 48%);
+        }
+
+    }
+
+    .cake_fourth {
+        @include cakes(300px, 302px, flex, center, flex-end, relative, url('../../../assets//icons/cake_fourth.svg'));
+
+        div {
+            @include posTopLeft(absolute, 90%, 40%);
+        }
+
+    }
+
+}

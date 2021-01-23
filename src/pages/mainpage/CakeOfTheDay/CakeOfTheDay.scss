@@ -1,0 +1,58 @@
+@mixin flexBox($w, $h, $jc, $ai, $fd) {
+    width: $w;
+    height: $h;
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+@mixin family($fs) {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: bold;
+    font-size: $fs;
+}
+
+.cakeOfTheDay {
+    @include flexBox(100%, 850px, center, center, null);
+
+    .cake_block {
+        @include flexBox(850px, 850px, flex-start, center, column);
+
+        .sweet {
+            @include flexBox(600px, 170px, center, center, null);
+
+            .cake_today {
+                @include family(64px)
+            }
+
+            .slack {
+                @include flexBox(170px, 170px, center, flex-end, null);
+                background-image: url('../../../assets//icons/slack.svg');
+                background-repeat: no-repeat;
+            }
+
+        }
+
+    }
+
+    .cake {
+        @include flexBox(700px, 600px, center, flex-start, null);
+        background-image: url('../../../assets//icons/cake_of_the_day.svg');
+        background-repeat: no-repeat;
+    }
+
+    button {
+        width: 350px;
+        height: 50px;
+        background-color: #032e3c;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        @include family(20px)
+    }
+
+}

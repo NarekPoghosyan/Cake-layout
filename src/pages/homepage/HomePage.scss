@@ -1,0 +1,122 @@
+@mixin globuses($w, $h, $p, $bc, $br, $t, $r) {
+    width: $w;
+    height: $h;
+    position: $p;
+    background-color: $bc;
+    border-radius: $br;
+    top: $t;
+    right: $r;
+}
+
+@mixin globus_img($w, $h, $p, $bi, $br, $bp, $r, $t) {
+    width: $w;
+    height: $h;
+    position: $p;
+    background-image: $bi;
+    background-repeat: $br;
+    background-position: $bp;
+    right: $r;
+    top: $t;
+}
+
+@mixin widHeiPos($w, $h, $p) {
+    width: $w;
+    height: $h;
+    position: $p;
+}
+
+.homepage {
+    @include widHeiPos(100%, 100%, relative);
+
+    .titlebar {
+        @include widHeiPos(100%, 158px, null);
+        display: flex;
+    }
+
+    .categories {
+        @include widHeiPos(45px, 39px, null);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        cursor: pointer;
+        margin: 71px 0 0 86px;
+
+        div {
+            @include widHeiPos(100%, 6px, null);
+            background-color: #1f1f1f;
+        }
+
+    }
+
+    .logo {
+        @include widHeiPos(332px, 119px, absolute);
+        top: 40px;
+        left: 40%;
+        background-image: url('../../assets//icons/Vector.svg');
+    }
+
+    .menu {
+        @include widHeiPos(350px, 30px, absolute);
+        top: 60px;
+        left: 80%;
+
+        div {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            a {
+                @include widHeiPos(140px, 24px, null);
+                text-decoration: none;
+                color: #032e3c;
+            }
+
+        }
+
+    }
+
+    .globus_img {
+        @include globus_img(873px, 941px, absolute, null, null, null, -374px, null);
+        left: 80%;
+        transform: matrix(-0.41, 0.91, 0.91, 0.41, 0, 0);
+    }
+
+    .globus {
+        @include globus_img(550px, 550px, absolute, url('../../assets//icons/Ellipse\ 335.svg'), no-repeat, right, 0, 80px);
+    }
+
+    .gl_bg {
+        @include globus_img(641px, 673px, absolute, url('../../assets//icons/globus_gr.svg'), no-repeat, left, 0, -80px);
+        z-index: -1;
+    }
+
+    .white_line {
+        @include globuses(480px, 450px, absolute, null, 50%, 300px, 0);
+        border: 2px solid white;
+    }
+
+    .mini_globus_one {
+        @include globuses(20px, 20px, absolute, white, 50%, 400px, 90px);
+    }
+
+    .mini_globus_two {
+        @include globuses(10px, 10px, absolute, white, 50%, 450px, 190px);
+    }
+
+    .mini_globus_three {
+        @include globuses(8px, 8px, absolute, white, 50%, 380px, 290px);
+    }
+
+    .mini_globus_fourth {
+        @include globuses(5px, 5px, absolute, white, 50%, 480px, 240px);
+    }
+
+    .mini_globus_five {
+        @include globuses(9px, 9px, absolute, white, 50%, 350px, 340px);
+    }
+
+    .mini_globus_six {
+        @include globuses(11px, 11px, absolute, white, 50%, 320px, 220px);
+    }
+
+}

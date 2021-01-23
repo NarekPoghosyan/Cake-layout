@@ -1,0 +1,51 @@
+@mixin position($w, $h, $l, $r, $t, $br) {
+    width: $w;
+    height: $h;
+    position: absolute;
+    left: $l;
+    right: $r;
+    top: $t;
+    border-radius: $br;
+}
+
+.mainpage {
+    margin-top: 300px;
+    position: relative;
+
+    .ellipse {
+        @include position(366px, 366px, -20px, null, 150px, null);
+        background-image: url('../../assets//icons/Ellipse\ 337.svg');
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    
+    .white_ellipse_line {
+        @include position(366px, 366px, -2px, null, 250px, 50%);
+        border: 2px solid white;
+    }
+
+    .white_ellipse {
+        @include position(100px, 100px, 140px, null, 170px, 50%);
+        background-color: white;
+    }
+
+    .egg {
+        @include position(879px, 739px, null, 0, 800px, 50%);
+        background-image: url('../../assets/icons/Egg_bg.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        z-index: -1;
+    }
+
+    .egg_cyrcle {
+        @include position(366px, 366px, null, 140px, 970px, 50%);
+        background-color: #ECBEC1;
+        z-index: -1;
+    }
+
+    .egg_white_cyrcle {
+        @include position(98px, 98px, null, 390px, 990px, 50%);
+        background-color: white;
+    }
+
+}

@@ -1,0 +1,139 @@
+@mixin cakeImg($w, $h, $bi) {
+    width: $w;
+    height: $h;
+    background-image: $bi;
+    background-repeat: no-repeat;
+}
+
+@mixin family($fs, $fw ,$c) {
+    font-family: 'Comfortaa';
+    font-weight: $fw;
+    font-size: $fs;
+    color: $c;
+}
+
+@mixin cursor($w, $h) {
+    cursor: pointer;
+    width: $w;
+    height: $h;
+}
+
+@mixin humanImg($w, $h, $bi) {
+    width: $w;
+    height: $h;
+    background-image: $bi;
+    background-repeat: no-repeat;
+}
+
+@mixin flexBox($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+.bestsellers {
+    width: 100%;
+    height: 400px;
+
+    .best {
+        margin-left: 170px;
+        @include family(24px, bold, #3978BF);
+    }
+
+    .collection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        button {
+            @include cursor(80px, 80px);
+            background-color: white;
+            color: #3978BF;
+            outline: none;
+            border: none;
+            font-size: 70px;
+        }
+
+        .card {
+            @include cursor(320px, 420px);
+            border: 1px solid lightgray;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 13px;
+
+            .cake_img_one {
+                @include cakeImg(300px, 290px, url('../../../assets//icons/cake_two.svg'));
+            }
+
+            .cake_img_two {
+                @include cakeImg(300px, 290px, url('../../../assets//icons/cake_one.svg'));
+            }
+
+            .cake_img_three {
+                @include cakeImg(300px, 290px, url('../../../assets//icons/cake_fourth.svg'));
+            }
+
+            .cake_img_fourth {
+                @include cakeImg(300px, 290px, url('../../../assets//icons/cake_three.svg'));
+            }
+
+            .cake_img_five {
+                @include cakeImg(300px, 290px, url('../../../assets//icons/cake_one.svg'));
+            }
+
+            .money {
+                @include family(null, normal, #858586);
+            }
+
+            p {
+                padding-left: 20px;
+                @include family(20px, bold,  #3978BF);
+            }
+
+            &:hover {
+                transition: 0.3s linear;
+                -webkit-box-shadow: 0 0 10px rgb(0, 68, 255);
+                box-shadow: 0 0 10px rgb(0, 68, 255);
+                }
+        }
+
+
+    }
+
+    .card_footer {
+        @include flexBox(space-between, center);
+        width: 100%;
+        height: 20px;
+
+        div {
+            @include flexBox(flex-start, center);
+            .man {
+                border-bottom: 1px solid lightgray;
+                padding-right: 20px;
+                margin-bottom: 25px;
+                font-family: 'Mardoto';
+                font-style: normal;
+                font-weight: normal;
+                font-size: 15px;
+                color: rgba(29, 29, 31, 0.54);
+            }
+
+            .shape {
+                @include humanImg(12px, 12px, url('../../../assets/icons/Shape.svg'));
+                z-index: -1;
+            }
+
+        }
+
+    }
+
+    .group_human {
+        margin-left: 20px;
+        @include humanImg(29px, 29px, url('../../../assets/icons/group.svg'));
+    }
+
+    .basket {
+        @include humanImg(80px, 100px, url('../../../assets/icons/basket.png'));
+        z-index: -1;
+    }
+
+}

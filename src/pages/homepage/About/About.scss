@@ -1,0 +1,87 @@
+@mixin texts($fw, $fs) {
+    padding: 0;
+    margin: 0;
+    font-family: 'Comfortaa';
+    font-weight: $fw;
+    font-size: $fs;
+    color:  #032E3C;
+}
+
+@mixin flexBox($w, $h, $jc, $ai) {
+    width: $w;
+    height: $h;
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: column;
+}
+
+.about {
+    width: 100%;
+    height: 850px;
+    display: flex;
+
+    .tort_img {
+        width: 50%;
+        height: 900px;
+        background-image: url('../../../assets//icons/tort_img.svg');
+        background-repeat: no-repeat;
+        top: -20px;
+        left: 0;
+    }
+
+    .about_text {
+        @include flexBox(50%, 900px, flex-end, flex-start)
+
+        .text_one {
+            @include texts(300, 49px);
+        }
+
+        .text_two {
+            @include texts(normal, 49px);
+        }
+
+        .text_three {
+            @include texts(500, 58px);
+        }
+
+        .text_fourth {
+            @include texts(normal, 73px);
+        }
+
+        button {
+            @include texts(null, 30px);
+            margin-top: 20px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            width: 240px;
+            height: 82px;
+            background: #032E3C;
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .slack_1 {
+                background-image: url('../../../assets/icons/Slack_1.svg');
+                background-repeat: no-repeat;
+                width: 165px;
+                height: 165px;
+            }
+
+            p {
+                margin-left: 20px;
+                font-family: Comfortaa;
+                font-size: 48px;
+                color: #032E3C;
+            }
+
+        }
+    }
+
+}

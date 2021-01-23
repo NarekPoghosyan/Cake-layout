@@ -1,0 +1,61 @@
+@mixin flexBox($w, $h, $jc, $ai, $fd, $bi, $br) {
+    width: $w;
+    height: $h;
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+    background-image: $bi;
+    background-repeat: $br;
+}
+
+.services {
+    @include flexBox(100%, 370px, space-around, center, null, null, null);
+    margin-top: 200px;
+
+    .courier {
+        @include flexBox(400px, 200px, center, center, column, null, null);
+
+        .car_img {
+            @include flexBox(190px, 130px, center, center, null, url('../../../assets//icons/car_img.svg'), no-repeat);
+        }
+
+    }
+
+    .want_cake {
+        @include flexBox(400px, 200px, center, center, column, null, null);
+        border-right: 2px solid rgb(0, 6, 34);
+        border-left: 2px solid rgb(0, 6, 34);
+
+        .cake_img {
+            @include flexBox(190px, 130px, center, center, null, url('../../../assets//icons/cake_img.svg'), no-repeat);
+            background-position: center;
+        }
+    }
+
+    .prize {
+        @include flexBox(400px, 200px, center, center, column, null, null);
+
+        .prize_img {
+            @include flexBox(190px, 130px, center, center, null, url('../../../assets//icons/prize_img.svg'), no-repeat);
+            background-position: center;
+        }
+
+    }
+
+    .desc {
+        @include flexBox(null, null, center, center, column, null, null);
+
+        .description {
+            margin-top: 15px;
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+
+        }
+
+    }
+
+}
